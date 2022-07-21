@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #rk{
+        float:right;
+    }
+.card{
+    float:right;
+    background-color:rgb(159, 226, 248);
+}
+    .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+</style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body style="background-color:rgb(216, 242, 233)">
+    
+    <form> 
+        
+        <h1 id="h1">LAMPSUM CALCULATOR</h1>
+        
+    <div class="container-fluid">
+        <label>I want to invest : </label><input type="text" name="invest" id="int">
+        <label for="R1" class="form-label"></label>
+<input type="range" class="form-range" id="R1" min="10000" max="100000" step="01" onchange="func()">
+        <label>No. of years :</label><input type="text" name="invest" id="int1">
+        <label for="customRange1" class="form-label"></label>
+<input type="range" class="form-range" id="R2" min="1" max="30" step="01" onchange="func1()">
+        <label>Expected rate of return :</label><input type="text" name="invest" id="int2" >
+        <label for="customRange1" class="form-label"></label>
+<input type="range" class="form-range" id="R3" min="1" max="20" step="01" onchange="func2()">
+      </div>
+     
+      
+          
+          <br>
+
+            
+            
+            <a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-1#:~:text=A%20mutual%20fund%20is%20a,buy%20shares%20in%20mutual%20funds.">View Disclaimer</a><br><br>
+        
+            <input type="button" value="INVEST NOW" onclick ="add()"><br><br>
+            <p>Invest Now</p>
+            <p id="s3"></p>
+            <p id="s1"> </p>
+            <p id="s2"></p>
+        </div>
+
+    </div>  </fieldset>
+    
+
+
+    <div class="card" style="width: 20rem;">
+        <p class="card-img-top" alt="..."></p>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text"><h2> Investment Required </h2>
+        
+            <h2 style="color:blue;"> Rs.3,47,284</h2></p>
+          <a href="" class="btn btn-primary" onclick="add();">INVEST NOW</a>
+        </div>
+      </div>
+</form>
+    
+</body>
+<script>
+  function func(){
+         var a=document.getElementById("R1").value;
+         document.getElementById("int").value=a;
+     }
+     function func1(){
+         var n=document.getElementById("R2").value;
+         document.getElementById("int1").value=n;
+     }
+     function func2(){
+         var r=document.getElementById("R3").value;
+         document.getElementById("int2").value=r;
+     }
+     function add(){
+       
+       var a=document.getElementById("R1").value;
+       var n=document.getElementById("R2").value;
+       var r=document.getElementById("R3").value;
+         var q=(Math.pow(a*(1+(r/n)),n/5));
+         document.getElementById("s3").innerHTML=a;
+         document.getElementById("s1").innerHTML="Resultant Ammount";
+         document.getElementById("s2").innerHTML=q;
+
+
+
+     }
+
+   
+</script>
+
+
+</html>
